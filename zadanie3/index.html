@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather API a Leaflet</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Leaflet CSS -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+</head>
+
+<body>
+
+    <header>
+        <h1>Weather API a Leaflet mapa</h1>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>1. Aktuálne počasie</h2>
+
+            <div id="weather">
+                Načítavam počasie...
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Mapa</h2>
+
+            <div id="map"></div>
+        </section>
+
+    </main>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Vlastný JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

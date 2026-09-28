@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eeeeee;
+    margin: 0;
+}
+
+header {
+    background-color: #333333;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+main {
+    width: 80%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+#weather {
+    font-size: 20px;
+    padding: 20px;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
