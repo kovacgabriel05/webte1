@@ -1,0 +1,13 @@
+Kontrola HTML: Nu Html Checker (vnu.jar 26.10.9 (3d97faa)), rovnaký validátor, aký beží na validator.w3.org
+Spustené lokálne dňa 2026-10-10 nad súbormi z priečinka Z1_Kovac.
+
+== index.html
+Document checking completed. No errors found.
+== pages/cv.html
+Document checking completed. No errors found.
+== pages/workspace.html
+Document checking completed. No errors found.
+== pages/schedule.html
+Document checking completed. No errors found.
+== pages/map.html
+Document checking completed. No errors found.

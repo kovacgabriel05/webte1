@@ -1,0 +1,5 @@
+Lokálna kontrola CSS (npm balík csstree-validator), spustená 2026-10-10.
+Poznámka: toto NIE je výstup z https://jigsaw.w3.org/css-validator/ - ten treba doplniť ako screenshot (docs/validator-css.png).
+
+styles.css: 0 problémov
+print.css:  1 hlásenie "Unknown at-rule descriptor margin" pri @page - ide o falošné hlásenie nástroja, vlastnosť margin je v @page platná.

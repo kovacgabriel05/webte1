@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profil | Gabriel Kováč</title>
+  <meta name="description" content="Osobná vizitka Gabriela Kováča, študenta aplikovanej informatiky na FEI STU v Bratislave. Fotografovanie, hudba, financie a investovanie.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="sk_SK">
+  <meta property="og:title" content="Profil | Gabriel Kováč">
+  <meta property="og:description" content="Osobná vizitka Gabriela Kováča, študenta aplikovanej informatiky na FEI STU v Bratislave. Fotografovanie, hudba, financie a investovanie.">
+  <meta property="og:image" content="img/og-image.jpg">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="img/monogram.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="js/script.js" defer></script>
+</head>
+<body data-page="profile">
+  <a class="skip-link" href="#main">Preskočiť na obsah</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <div class="brand">
+        <a class="brand__logo-link" href="index.html">
+          <img class="brand__logo" src="img/monogram.svg" alt="Monogram GK, prejsť na úvodnú stránku" width="64" height="64">
+        </a>
+        <div>
+          <p class="brand__name">Gabriel Kováč</p>
+          <p class="brand__slogan">Všetko je to iba v hlave.</p>
+        </div>
+      </div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle__bars" aria-hidden="true"></span>
+        <span>Menu</span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="site-nav" id="site-nav" aria-label="Hlavná navigácia">
+    <ul class="site-nav__list">
+        <li><a class="control" href="index.html" aria-current="page">Profil</a></li>
+        <li><a class="control" href="pages/cv.html">Životopis</a></li>
+        <li><a class="control" href="pages/workspace.html">Pracovné prostredie</a></li>
+        <li><a class="control" href="pages/schedule.html">Kedy ma zastihnete</a></li>
+        <li><a class="control" href="pages/map.html">Kde ma nájdete</a></li>
+    </ul>
+  </nav>
+
+  <main id="main" class="container">
+    <article class="card profile">
+      <figure class="profile__photo">
+        <img src="img/me.jpg" alt="Portrét Gabriela Kováča: usmiaty mladý muž s krátkymi vlasmi v čiernom tričku" width="800" height="1000" loading="lazy">
+      </figure>
+      <h1>Som Gabriel, študent aplikovanej informatiky na FEI STU</h1>
+      <p class="profile__intro">Študujem v treťom ročníku bakalárskeho štúdia aplikovanej informatiky na Fakulte elektrotechniky a informatiky STU v Bratislave. Štúdium mám denné a každý deň dochádzam z Bernolákova.</p>
+      <p>Medzi moje hlavné záujmy patrí fotografovanie, hudba a financie a investovanie. Zatiaľ si nie som istý, či sa po škole budem venovať práci v IT. Môj najbližší cieľ je dokončiť bakalárske štúdium a potom sa uvidí, čo ďalej.</p>
+      <p><a class="control" href="pages/cv.html">Pozrieť môj životopis</a></p>
+    </article>
+
+    <section aria-labelledby="interests-title">
+      <h2 id="interests-title">Moje tri hlavné záujmy</h2>
+      <ul class="key-list">
+        <li class="key-list__item">
+          <strong class="key-list__title">Fotografovanie</strong>
+          Som hobby fotograf. Fotím na Fujifilm alebo filmový Canon. Upravujem v CaptureOne. Fotím si najmä pre seba, vo voľnom čase.
+        </li>
+        <li class="key-list__item">
+          <strong class="key-list__title">Hudba</strong>
+          Hrám na trombón. 13 rokov som chodil do ZUŠ, pochodil som niekoľko celoslovenských súťaží a so svojimi spoluhráčmi povyhrával aj niekoľko ocenení.
+        </li>
+        <li class="key-list__item">
+          <strong class="key-list__title">Financie a investovanie</strong>
+          Poslednou dobou sa zaujímam o financie a investovanie. Zatiaľ veľmi na nízkej úrovni. Ale keďže viem, že čas je v investovaní dôležitou veličinou, snažím sa to neodkladať.
+        </li>
+      </ul>
+    </section>
+
+    <aside class="motto" aria-label="Moje motto">
+      <p class="motto__text">Kto nestrieľa, netrafí.</p>
+      <p class="motto__source">slovenské príslovie</p>
+    </aside>
+
+    <section aria-labelledby="semester-title">
+      <h2 id="semester-title">Čo študujem tento semester</h2>
+      <ul class="tag-list">
+        <li>Webové technológie 1</li>
+        <li>Operačné systémy</li>
+        <li>Lineárna algebra 2</li>
+        <li>Analýza a zložitosť algoritmov</li>
+        <li>Matematická štatistika</li>
+        <li>Softvérové inžinierstvo</li>
+        <li>Telesná výchova 5</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <address>
+        <strong>Gabriel Kováč</strong><br>
+        <a href="mailto:kovacgabriel05@gmail.com">kovacgabriel05@gmail.com</a><br>
+        <a href="tel:+421943676767">+421 943 676 767</a><br>
+        Poštová 80, 900 27 Bernolákovo
+      </address>
+      <div class="site-footer__sources">
+        <p>Zdroje: fotografie sú moje vlastné; mapové podklady © <a href="https://www.openstreetmap.org/copyright">prispievatelia OpenStreetMap</a>; mapová knižnica <a href="https://leafletjs.com/">Leaflet</a>; písmo <a href="https://github.com/googlefonts/roboto-classic">Roboto</a> (SIL Open Font License 1.1).</p>
+        <p>© 2026 Gabriel Kováč</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
