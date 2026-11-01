@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Obedové menu v okolí fakulty</title>
+  <meta name="description" content="Denné menu reštaurácií v okolí FEI STU na jednom mieste.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="lib/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="lib/jquery.min.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/parsers.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__top">
+      <div class="container">
+        <a class="brand" href="index.html">
+          <img class="brand__logo" src="favicon.svg" alt="" width="52" height="52">
+          <span class="brand__text">
+            <span class="brand__name">Menučko v Bratislave</span>
+
+          </span>
+        </a>
+      </div>
+    </div>
+    <nav class="site-nav" aria-label="Hlavná navigácia">
+      <div class="container">
+        <ul class="main-nav">
+          <li><a href="index.html" aria-current="page">Denné menu</a></li>
+          <li><a href="o-projekte.html">O projekte</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container py-4">
+    <section class="intro" aria-labelledby="page-title">
+      <h1 id="page-title">Obedové menu v Bratislave</h1>
+
+
+      <div class="toolbar">
+        <button id="refresh" type="button" class="btn btn-brand">Aktualizovať menu</button>
+        <button id="clear" type="button" class="btn btn-outline-secondary">Vymazať uložené dáta</button>
+        <p id="status" class="status" role="status" aria-live="polite">Menu sa načítava…</p>
+      </div>
+    </section>
+
+    <p id="weekend-note" class="alert alert-info" hidden>
+      Dnes je víkend a denné menu sa podáva iba v pracovné dni. Zobrazujeme menu na pondelok.
+    </p>
+
+    <nav class="day-nav" aria-label="Výber dňa">
+      <ul id="day-tabs" class="day-tabs"></ul>
+    </nav>
+
+    <section class="filters" aria-labelledby="filters-title">
+      <h2 id="filters-title" class="filters__title">Zobraziť reštaurácie</h2>
+      <div id="filters" class="filters__list"></div>
+    </section>
+
+    <section aria-labelledby="menu-title">
+      <h2 id="menu-title" class="menu-title">Menu</h2>
+      <div id="cards" class="row g-4"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="mb-1">WEBTE1 – Zadanie 2, ZS 2026/2027 · Gabriel Kováč</p>
+      <p class="mb-0 small">
+        Použité knižnice: Bootstrap 5.3.8 (CSS), jQuery 4.0.0 (parser Eat &amp; Meet).
+        Viac v časti <a href="o-projekte.html">O projekte</a>.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

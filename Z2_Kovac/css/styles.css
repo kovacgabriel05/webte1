@@ -1,0 +1,554 @@
+/* Roboto, loaded locally (SIL Open Font License, see fonts/OFL.txt). Two files per weight:
+   latin (basic letters) and latin-ext (Slovak letters such as č, ľ, ô). */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/roboto-latin-ext-400-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/roboto-latin-400-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/roboto-latin-ext-500-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/roboto-latin-500-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/roboto-latin-ext-700-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/roboto-latin-700-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Our styles come after Bootstrap, so they can override it.
+   Colours are the same palette as my personal page from assignment 1. */
+:root {
+  --color-bg: #f3f3f2;
+  --color-surface: #ffffff;
+  --color-text: #1b1c1f;
+  --color-muted: #646569;
+  --color-dark: #23252a;
+  --color-header: #3f4147;
+  --color-accent: #8f2e38;
+  --color-accent-dark: #74242d;
+  --color-accent-light: #b4747a;
+  --color-accent-bg: #faf3f3;
+  --color-line: #e2e2e0;
+  --radius: 0.75rem;
+  --radius-small: 0.5rem;
+  --shadow: 0 0.25rem 1.25rem rgba(27, 28, 31, 0.08);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: "Roboto", sans-serif;
+}
+
+main {
+  flex: 1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+}
+
+h1,
+h2 {
+  color: var(--color-accent);
+}
+
+a {
+  color: var(--color-accent);
+}
+
+a:hover {
+  color: var(--color-accent-dark);
+}
+
+/* Header: dark bar with logo, white bar with the main navigation (unordered list) */
+.site-header__top {
+  padding: 1rem 0;
+  background: var(--color-header);
+  color: #ffffff;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.brand:hover,
+.brand:focus {
+  color: #ffffff;
+}
+
+.brand__logo {
+  padding: 0.35rem;
+  border-bottom: 3px solid var(--color-accent);
+  border-radius: var(--radius-small);
+  background: var(--color-dark);
+}
+
+.brand__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand__name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.brand__tagline {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.site-nav {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-line);
+  background: var(--color-surface);
+}
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Navigation links and day tabs share one look: outlined button, active = dark with red line */
+.main-nav a,
+.day-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1rem;
+  border: 2px solid var(--color-dark);
+  border-radius: var(--radius-small);
+  background: var(--color-surface);
+  color: var(--color-dark);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible,
+.day-tab:hover {
+  background: var(--color-bg);
+  color: var(--color-dark);
+}
+
+.main-nav a[aria-current="page"],
+.day-tab[aria-pressed="true"] {
+  background: var(--color-dark);
+  box-shadow: inset 0 -4px 0 var(--color-accent);
+  color: #ffffff;
+}
+
+/* Intro and toolbar */
+.intro h1 {
+  font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+}
+
+.lead {
+  color: var(--color-muted);
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  border-width: 2px;
+  border-radius: var(--radius-small);
+  font-weight: 700;
+}
+
+.btn-brand {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #ffffff;
+}
+
+.btn-brand:hover,
+.btn-brand:focus-visible {
+  background: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+  color: #ffffff;
+}
+
+.btn-brand:disabled {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #ffffff;
+  cursor: progress;
+}
+
+.btn-outline-secondary {
+  border-color: var(--color-dark);
+  color: var(--color-dark);
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus-visible {
+  background: var(--color-dark);
+  border-color: var(--color-dark);
+  color: #ffffff;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+/* Day tabs */
+.day-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+.day-tab__today {
+  padding: 0.05rem 0.45rem;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: #ffffff;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+/* Restaurant filter */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 1rem;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: var(--shadow);
+}
+
+.filters__title {
+  margin: 0;
+  color: var(--color-dark);
+  font-size: 1rem;
+}
+
+.form-check-input:checked {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.form-check-input:focus {
+  border-color: var(--color-accent-light);
+  box-shadow: 0 0 0 0.25rem rgba(143, 46, 56, 0.2);
+}
+
+.menu-title {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+
+/* Restaurant cards: white card with a red line on the left, like the interest cards on my page */
+.restaurant-card {
+  overflow: hidden;
+  border: 0;
+  border-left: 5px solid var(--color-accent);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.restaurant-card__header {
+  border-bottom: 0;
+  background: var(--color-dark);
+  color: #ffffff;
+}
+
+.restaurant-card__name {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.restaurant-card__name a {
+  color: #ffffff;
+  text-decoration-color: var(--color-accent-light);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.25em;
+}
+
+.restaurant-card__name a::after {
+  content: " ↗";
+  font-size: 0.85em;
+}
+
+.restaurant-card__address {
+  margin: 0.2rem 0 0;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.85rem;
+}
+
+.day-menu + .day-menu {
+  margin-top: 1.5rem;
+}
+
+.day-menu__title {
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--color-line);
+  color: var(--color-accent);
+  font-size: 1.1rem;
+}
+
+.day-menu__date {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.empty-day {
+  margin: 0;
+  padding: 0.75rem;
+  border-radius: var(--radius-small);
+  background: var(--color-bg);
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+/* Menu items: soups (grey) and main dishes (red) look different */
+.menu-list {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  border-left: 4px solid var(--color-accent);
+  border-radius: var(--radius-small);
+  background: var(--color-accent-bg);
+}
+
+.menu-item--soup {
+  border-left-color: var(--color-muted);
+  background: var(--color-bg);
+}
+
+.menu-item__text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.menu-item__type {
+  color: var(--color-accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.menu-item--soup .menu-item__type {
+  color: var(--color-muted);
+}
+
+.menu-item__name {
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.menu-item--soup .menu-item__name {
+  font-style: italic;
+}
+
+.menu-item--main .menu-item__name {
+  font-weight: 500;
+}
+
+.menu-item__meta {
+  margin-top: 0.15rem;
+  color: var(--color-muted);
+  font-size: 0.75rem;
+}
+
+.menu-item__price {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: flex-end;
+  gap: 0.15rem;
+  text-align: right;
+}
+
+.price-tag {
+  padding: 0.15rem 0.6rem;
+  border-bottom: 2px solid var(--color-accent);
+  border-radius: 0.4rem;
+  background: var(--color-dark);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.price-tag--muted {
+  border-bottom: 0;
+  background: transparent;
+  color: var(--color-muted);
+  font-size: 0.75rem;
+  font-weight: 400;
+  white-space: normal;
+}
+
+.price-extra {
+  max-width: 9rem;
+  color: var(--color-muted);
+  font-size: 0.7rem;
+  line-height: 1.2;
+}
+
+/* About page */
+.about-section {
+  margin-bottom: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 5px solid var(--color-accent);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: var(--shadow);
+}
+
+.about-section h2 {
+  font-size: 1.35rem;
+}
+
+.about-section ol,
+.about-section ul {
+  margin-bottom: 0;
+}
+
+.about-section code {
+  color: var(--color-accent);
+}
+
+/* Footer */
+.site-footer {
+  margin-top: 2rem;
+  padding: 1.25rem 0;
+  border-top: 4px solid var(--color-accent);
+  background: var(--color-dark);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.site-footer a {
+  color: #ffffff;
+}
+
+/* Small screens: price goes under the dish name, smaller header */
+@media (max-width: 575.98px) {
+  .brand__logo {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand__name {
+    font-size: 1.25rem;
+  }
+
+  .brand__tagline {
+    font-size: 0.85rem;
+  }
+
+  .menu-item {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .menu-item__price {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: left;
+  }
+
+  .price-extra {
+    max-width: none;
+  }
+
+  .toolbar .btn {
+    flex: 1 1 auto;
+  }
+
+  .main-nav a,
+  .day-tab {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}

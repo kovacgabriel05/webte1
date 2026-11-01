@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>O projekte | Obedové menu v okolí fakulty</title>
+  <meta name="description" content="Ako stránka Obedové menu v okolí fakulty získava a spracúva dáta.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="lib/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__top">
+      <div class="container">
+        <a class="brand" href="index.html">
+          <img class="brand__logo" src="favicon.svg" alt="" width="52" height="52">
+          <span class="brand__text">
+            <span class="brand__name">Menučko v Bratislave</span>
+
+          </span>
+        </a>
+      </div>
+    </div>
+    <nav class="site-nav" aria-label="Hlavná navigácia">
+      <div class="container">
+        <ul class="main-nav">
+          <li><a href="index.html">Denné menu</a></li>
+          <li><a href="o-projekte.html" aria-current="page">O projekte</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container py-4">
+    <h1 class="mb-4">O projekte</h1>
+
+    <section class="about-section" aria-labelledby="sources-title">
+      <h2 id="sources-title">Odkiaľ sa dáta načítavajú</h2>
+      <p>
+        Stránka zobrazuje denné menu troch reštaurácií. Dáta sa načítavajú z lokálnych kópií ich stránok
+        uložených v priečinku <code>data/</code>. Pri každej reštaurácii je odkaz na jej pôvodnú stránku.
+      </p>
+      <div class="table-responsive">
+        <table class="table align-middle mb-0">
+          <thead>
+            <tr>
+              <th scope="col">Reštaurácia</th>
+              <th scope="col">Pôvodná stránka</th>
+              <th scope="col">Lokálna kópia</th>
+              <th scope="col">Štruktúra stránky</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Eat &amp; Meet</td>
+              <td><a href="https://eatandmeet.sk/tyzdenne-menu" target="_blank" rel="noopener">eatandmeet.sk</a></td>
+              <td><code>data/eatandmeet.html</code></td>
+              <td>záložky dní (<code>.tab-pane</code>), jedlá v <code>.menu-details</code>, dve ceny (bežná a s ISIC), bez dátumov</td>
+            </tr>
+            <tr>
+              <td>U Zlatého Bažanta</td>
+              <td><a href="https://uzlatehobazanta.sk/denne-menu/" target="_blank" rel="noopener">uzlatehobazanta.sk</a></td>
+              <td><code>data/zlatybazant.html</code></td>
+              <td>nadpis <code>h3</code> s dňom a dátumom, polievky v odseku, hlavné jedlá v číslovanom zozname, stála ponuka</td>
+            </tr>
+            <tr>
+              <td>Café Devín</td>
+              <td><a href="https://www.cafedevin.sk/menu/denne-business-menu/" target="_blank" rel="noopener">cafedevin.sk</a></td>
+              <td><code>data/cafedevin.html</code></td>
+              <td>nadpis <code>h3.menu-category-title</code>, riadky <code>.menu-item-grid</code>, alergény v texte, týždenný špeciál</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="about-section" aria-labelledby="processing-title">
+      <h2 id="processing-title">Ako sa dáta spracúvajú</h2>
+      <ol>
+        <li>Pri otvorení stránky sa najprv skontroluje <code>localStorage</code>. Ak sú tam dáta reštaurácie uložené v ten istý deň, použijú sa a stránka reštaurácie sa nenačítava.</li>
+        <li>Inak sa HTML kópia načíta asynchrónne cez Fetch API (<code>fetch</code> a <code>response.text()</code>, s kontrolou <code>response.ok</code>). Všetky reštaurácie sa načítavajú súčasne (<code>Promise.allSettled</code>) a každá sa zobrazí hneď, ako je hotová.</li>
+        <li>Text sa prevedie na samostatný dokument cez <code>DOMParser</code>. Údaje sa vyberajú cez <code>querySelector</code> a <code>querySelectorAll</code> (pri Eat &amp; Meet cez jQuery selektory), regulárne výrazy sa používajú iba na krátke texty jednotlivých prvkov (cena, dátum, alergény).</li>
+        <li>Každá reštaurácia má vlastný parser v súbore <code>js/parsers.js</code>. Všetky vracajú rovnakú štruktúru: pole dní a v každom dni pole položiek s typom, názvom, cenou, alergénmi a hmotnosťou.</li>
+        <li>Na stránku sa vkladajú iba vybrané údaje cez <code>createElement</code> a <code>textContent</code>. Cudzie HTML sa nikdy nevkladá cez <code>innerHTML</code>.</li>
+        <li>Ak je stránka reštaurácie nedostupná alebo sa zmenila jej štruktúra, karta ukáže chybu a tlačidlo <em>Skúsiť znova</em>. Ostatné reštaurácie sa zobrazia normálne.</li>
+      </ol>
+    </section>
+
+    <section class="about-section" aria-labelledby="libraries-title">
+      <h2 id="libraries-title">Použité knižnice a zdroje</h2>
+      <ul>
+        <li><strong>Bootstrap 5.3.8</strong> (iba CSS): mriežka, karty, formulárové prvky, indikátor načítania. Licencia MIT.</li>
+        <li><strong>jQuery 4.0.0</strong>: výber údajov zo stránky Eat &amp; Meet cez jQuery selektory (<code>$(doc).find()</code>, <code>.each()</code>). Licencia MIT.</li>
+        <li><strong>Roboto</strong>: písmo uložené lokálne vo formáte WOFF2, licencia SIL Open Font License 1.1.</li>
+      </ul>
+    </section>
+
+    <section class="about-section" aria-labelledby="author-title">
+      <h2 id="author-title">Autor</h2>
+      <p class="mb-0">Gabriel Kováč, WEBTE1 – Zadanie 2, ZS 2026/2027, FEI STU v Bratislave.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="mb-1">WEBTE1 – Zadanie 2, ZS 2026/2027 · Gabriel Kováč</p>
+      <p class="mb-0 small">
+        Použité knižnice: Bootstrap 5.3.8 (CSS), jQuery 4.0.0 (parser Eat &amp; Meet).
+        Späť na <a href="index.html">denné menu</a>.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
